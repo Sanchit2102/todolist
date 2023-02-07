@@ -5,7 +5,8 @@ const _ = require("lodash");
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const MONGODB_URI = process.env.MONGODB_URI;
+const Id = process.env.Id;
+const Pass = process.env.Pass;
 
 const app = express();
 
@@ -15,7 +16,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 mongoose.connect(
- "MONGODB_URI"
+  "mongodb+srv://" +
+    Id +
+    ":" +
+    Pass +
+    "@cluster0.m0keaiw.mongodb.net/todolistDB?retryWrites=true&w=majority"
 );
 
 const itemsSchema = new Schema({
