@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 mongoose.connect(
- MONGODB_URI
+ "MONGODB_URI"
 );
 
 const itemsSchema = new Schema({
